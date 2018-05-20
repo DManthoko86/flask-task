@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Account Transactions</h1>
+
+	<div class="container">
+           
+		<table class="table table-hover">
+	    <thead>
+	      <tr>
+	        <th>Date</th>
+	        <th>Description</th>
+	        <th>Amount</th>
+	        <th>Balance</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+
+	    	{% for transact in transactions %}
+	    		<tr>
+	    			<td>{{transact.Date}}</td>
+	    			<td>{{transact.Description}}</td>
+	    			<td>{{transact.Amount}}</td>
+	    			<td>{{transact.Balance}}</td>
+	    		</tr>
+	    	{% endfor %}
+	    	
+	    </tbody>
+	 </table>
+	</div>
+
+{% endblock %}
