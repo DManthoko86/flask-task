@@ -16,6 +16,10 @@
 	    </thead>
 	    <tbody>
 
+	    	<!--
+	    	iterate through the transactions and display the contents of each transaction 
+	    	in a table 
+	    	 -->
 	    	{% for transact in transactions %}
 	    		<tr>
 	    			<td>{{transact.Date}}</td>
@@ -24,7 +28,7 @@
 	    			<td>{{transact.Balance}}</td>
 	    		</tr>
 	    	{% endfor %}
-	    	
+
 	    </tbody>
 	 </table>
 	</div>

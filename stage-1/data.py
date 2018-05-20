@@ -1,4 +1,5 @@
 def Transactions():
+	#use to store the transaction data
 	transactions = [
 		{
 			'id':1,
