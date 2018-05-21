@@ -1,3 +1,11 @@
+html{
+    overflow-x: hidden;
+}
+
 .sidebar-links {
   list-style-type: none;
+}
+
+.logged-in {
+	float: right;
 }
