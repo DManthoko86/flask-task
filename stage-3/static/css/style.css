@@ -1,0 +1,35 @@
+html, body {
+	height: 100%;
+}
+
+
+/*Nav Bar*/
+.nav-bar-colour{
+	background: #33658A; /*teal blue*/
+}
+
+/*Side bar*/
+.sidebar-links {
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.sidebar-links a { 
+	color: #000;
+}
+
+.sidebar-colour{
+	margin:0 auto;
+	background-color: #8FB8DE !important; /*dark sky blue*/
+}
+
+/*Main Content*/
+.main-colour {
+	background-color: #E0FBFC; /*light cyan*/
+}
+
+#transact-heading {
+	margin-bottom: 15px;
+	margin-top: 10px;
+}
+
