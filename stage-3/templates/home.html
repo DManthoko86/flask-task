@@ -2,6 +2,16 @@
 
 {% block body %}
 
+	{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message[1] }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 	  <!-- Brand/logo -->
 	  <a class="navbar-brand" href="/">Ultimate Bank</a>

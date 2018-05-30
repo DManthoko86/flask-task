@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, flash, request, redirect
-from data import Transactions
+from data import getTransactions, newTransaction
 from forms import TransactForm
 
 #export FLASK_APP=app.py
@@ -15,18 +15,23 @@ from forms import TransactForm
 app = Flask(__name__)
 app.secret_key = 'development key'
 
-Transactions = Transactions()
+Transactions = getTransactions()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	form = TransactForm()
+	form = TransactForm(request.form)
 	if request.method == 'POST':
 		return addTransaction(form)
 
 	return render_template('home.html', transactions=Transactions, form = form)
 
 def addTransaction(form):
-	flash('New transaction succesfully added')
+	date=request.form['date']
+	description=request.form['description']
+	amount=request.form['amount']
+	# flash(date + " " + description + " " + amount)
+	newTransaction(date,description,amount)
+
 	return redirect('/')
 
 
