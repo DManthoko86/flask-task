@@ -15,7 +15,7 @@ from forms import TransactForm
 app = Flask(__name__)
 app.secret_key = 'development key'
 
-Transactions = getTransactions()
+# Transactions = getTransactions()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -23,22 +23,24 @@ def index():
 	if request.method == 'POST':
 		return addTransaction(form)
 
-	return render_template('home.html', transactions=Transactions, form = form)
+	return render_template('home.html', transactions=getTransactions(), form = form)
 
 def addTransaction(form):
 	date=request.form['date']
 	description=request.form['description']
 	amount=request.form['amount']
 	# flash(date + " " + description + " " + amount)
-	print(date)
-	print(description)
-	print(amount)
-	print('------------------------------------------')
+	# print(date)
+	# print(description)
+	# print(amount)
+	# print('------------------------------------------')
 
 	newTransaction(date,description,amount)
 
-	return redirect('/')
+	# form = TransactForm(request.form)
+	# return redirect('/')
 
+	return render_template('success.html')
 
 if __name__ == '__main__':
 	app.run()
