@@ -52,7 +52,35 @@
 
 			    </tbody>
 		 	</table>
+
+		 	<form action = "/" method = POST>
+	         <fieldset>
+	            <legend>New Transaction</legend>
+	            {{ form.hidden_tag() }}
+	            
+	            <table>
+			    <thead>
+			      <tr>
+			        <th>{{ form.date.label }}</th>
+			        <th>{{ form.description.label }}</th>
+			        <th>{{ form.amount.label }}</th>
+			 
+			      </tr>
+			    </thead>
+			    <tbody>
+			    		<tr>
+			    			<td> {{ form.date }}</td>
+			    			<td>{{ form.description}}</td>
+			    			<td>{{ form.amount}}</td>
+			    		</tr>
+			    </tbody>
+		 	</table>
+	            {{ form.submit }}
+	         </fieldset>
+	      </form>
 		</div>
 	</div>
+
+	
 
 {% endblock %}
