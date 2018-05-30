@@ -30,6 +30,11 @@ def addTransaction(form):
 	description=request.form['description']
 	amount=request.form['amount']
 	# flash(date + " " + description + " " + amount)
+	print(date)
+	print(description)
+	print(amount)
+	print('------------------------------------------')
+
 	newTransaction(date,description,amount)
 
 	return redirect('/')

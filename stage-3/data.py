@@ -30,7 +30,7 @@ def Transactions():
 
 def getTransactions():
 	file = open('data.csv', 'r+')
-	balance = file.readline()
+	# balance = file.readline()
 	transactions = []
 	for line in file:
 		val = [x.strip() for x in line.split(',')]
@@ -52,8 +52,15 @@ def newTransaction(date,description,amount):
 		# read a list of lines into data
 		data = file.readlines()
 
+	balance = float(data[len(data)-1].split(',')[3]) - float(amount)
+	balance = "{:.2f}".format(balance)
+	newT = date + ',' + description + ',' + amount + ',' + balance + '\n'
+	data.append(newT)
 	
+	# and write everything back
+	with open('data.csv', 'w') as file:
+		file.writelines( data )
 
-if __name__ == '__main__':
-	# getTransactions()
-	addTransaction()
+# if __name__ == '__main__':
+# 	# getTransactions()
+# 	newTransaction('1','2','3')
