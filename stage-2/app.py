@@ -4,7 +4,6 @@ from data import Transactions
 #export FLASK_APP=app.py
 #export FLASK_ENV=development
 #flask run
-#/mnt/c/Users/Dominic/Documents/flask-task/stage-2
 
 app = Flask(__name__)
 
